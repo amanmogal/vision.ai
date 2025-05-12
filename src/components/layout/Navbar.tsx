@@ -44,7 +44,7 @@ const Navbar = () => {
             <img
               src="/lovable-uploads/68ac6025-a214-45c9-a801-b4d0dfc3ce81.png"
               alt="Vision AI Logo"
-              className="h-10"
+              className="h-12 md:h-14" /* Increased size from h-10 */
             />
           </a>
         </div>

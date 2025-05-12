@@ -69,8 +69,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Email</h4>
-                  <a href="mailto:info@vision-ai.example" className="text-primary hover:underline">
-                    info@vision-ai.example
+                  <a href="mailto:aman@visionai.software" className="text-primary hover:underline">
+                    aman@visionai.software
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">We aim to respond within 24 hours</p>
                 </div>
@@ -82,8 +82,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">Phone</h4>
-                  <a href="tel:+910000000000" className="text-primary hover:underline">
-                    +91 00 0000 0000
+                  <a href="tel:+18669427514" className="text-primary hover:underline">
+                    +1 866 942 7514
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">Monday to Friday, 9AM to 6PM IST</p>
                 </div>
@@ -95,8 +95,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium mb-1">LinkedIn</h4>
-                  <a href="#" className="text-primary hover:underline">
-                    linkedin.com/company/vision-ai-india
+                  <a href="https://www.linkedin.com/company/vison-ai/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                    linkedin.com/company/vison-ai
                   </a>
                   <p className="text-sm text-muted-foreground mt-1">Follow us for updates and insights</p>
                 </div>

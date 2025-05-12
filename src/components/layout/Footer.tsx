@@ -1,4 +1,3 @@
-
 import { ArrowUp } from 'lucide-react';
 
 const Footer = () => {
@@ -24,7 +23,7 @@ const Footer = () => {
             <img
               src="/lovable-uploads/68ac6025-a214-45c9-a801-b4d0dfc3ce81.png"
               alt="Vision AI Logo"
-              className="h-8 inline-block mb-4"
+              className="h-10 md:h-12 inline-block mb-4"
             />
             <p className="text-muted-foreground max-w-xs mx-auto md:mx-0">
               Empowering Indian SMBs with AI automation and data excellence to drive growth and efficiency.
