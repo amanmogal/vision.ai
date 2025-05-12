@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <a href="#hero" className="flex items-center">
             <img
-              src="/lovable-uploads/65cecf21-6675-4f7a-8c53-dba79bc131b8.png"
+              src="/lovable-uploads/68ac6025-a214-45c9-a801-b4d0dfc3ce81.png"
               alt="Vision AI Logo"
               className="h-10"
             />

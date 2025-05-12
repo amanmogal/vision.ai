@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="text-center md:text-left">
             <img
-              src="/lovable-uploads/65cecf21-6675-4f7a-8c53-dba79bc131b8.png"
+              src="/lovable-uploads/68ac6025-a214-45c9-a801-b4d0dfc3ce81.png"
               alt="Vision AI Logo"
               className="h-8 inline-block mb-4"
             />
