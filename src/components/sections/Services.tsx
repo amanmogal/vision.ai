@@ -1,4 +1,3 @@
-
 import { 
   Settings, 
   File, 
@@ -96,22 +95,28 @@ const Services = () => {
 
           {/* Data Annotation */}
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-border hover:border-primary/40 transition-colors">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">Indian Data Annotation</h3>
+            <h3 className="text-2xl font-bold mb-4 gradient-text">Upcoming: Indian Data Annotation</h3>
             <p className="text-muted-foreground mb-8">
-              High-quality, culturally-accurate data labeling services specialized for the Indian context. 
-              We ensure your AI models understand the nuances of Indian languages and cultures.
+              We are developing specialized data annotation services tailored for Indian languages and contexts. 
+              These services will provide the high-quality data needed to build and fine-tune AI models relevant to India.
             </p>
             
-            <h4 className="font-semibold mb-4">Types of Annotation:</h4>
+            <div className="flex items-center justify-center p-4 bg-muted rounded-lg mb-8">
+              <p className="text-sm font-medium text-muted-foreground italic">
+                More details will be available as the launch approaches.
+              </p>
+            </div>
+            
+            <h4 className="font-semibold mb-4">Purpose:</h4>
             <div className="grid grid-cols-1 gap-6 mb-8">
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-3">
                   <MessageSquare className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h5 className="font-medium">Text Annotation</h5>
+                  <h5 className="font-medium">Indian Language Support</h5>
                   <p className="text-sm text-muted-foreground">
-                    Named entity recognition, sentiment analysis, and classification for Indian languages 
+                    Enable AI models to understand and process data in various Indian languages 
                     including Hindi, Tamil, Bengali, Marathi, Telugu, and more.
                   </p>
                 </div>
@@ -124,10 +129,10 @@ const Services = () => {
                   </div>
                 </div>
                 <div>
-                  <h5 className="font-medium">Image Annotation</h5>
+                  <h5 className="font-medium">Cultural Context Understanding</h5>
                   <p className="text-sm text-muted-foreground">
-                    Bounding boxes, segmentation, and classification for Indian visual contexts, 
-                    including recognition of cultural objects, local environments, and more.
+                    Enhance AI models' ability to recognize and appropriately interpret Indian cultural 
+                    contexts, symbols, and environments in visual and textual data.
                   </p>
                 </div>
               </div>
@@ -139,10 +144,10 @@ const Services = () => {
                   </div>
                 </div>
                 <div>
-                  <h5 className="font-medium">Video Annotation</h5>
+                  <h5 className="font-medium">AI Model Enhancement</h5>
                   <p className="text-sm text-muted-foreground">
-                    Object tracking, action recognition, and scene understanding for video content 
-                    relevant to Indian businesses and consumers.
+                    Provide the foundation for building more accurate and relevant AI models 
+                    specifically designed for Indian businesses and consumers.
                   </p>
                 </div>
               </div>
@@ -152,11 +157,11 @@ const Services = () => {
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-center">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
-                <span>Industry-leading quality and accuracy</span>
+                <span>Deep understanding of Indian cultural context</span>
               </li>
               <li className="flex items-center">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
-                <span>Deep understanding of Indian cultural context</span>
+                <span>Industry-leading quality and accuracy</span>
               </li>
               <li className="flex items-center">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
@@ -164,7 +169,7 @@ const Services = () => {
               </li>
               <li className="flex items-center">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
-                <span>Rigorous quality control process</span>
+                <span>Complementary to our Agentic Workflow solutions</span>
               </li>
             </ul>
           </div>
