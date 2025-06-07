@@ -1,5 +1,4 @@
-
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -95,80 +94,28 @@ const Footer = () => {
                 className="h-10 w-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                 aria-label="GitHub"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5 0-1.2-.5-2.4-1.3-3.4.1-.4.1-1-.1-1.6 0 0-1.1-.4-3.6 1.3a12.3 12.3 0 0 0-6.2 0C6.3 7.8 5.2 8.2 5.2 8.2c-.2.6-.2 1.2-.1 1.6C4.3 10.8 3.8 12 3.8 13.2c0 3.5 3 5.5 6 5.5-.4.4-.8 1.1-1 1.8v4"></path>
-                  <path d="M9 19c-5 1.5-5-2.5-7-3l7 3z"></path>
-                </svg>
+                <Github className="h-5 w-5" />
               </a>
               <a
                 href="#"
                 className="h-10 w-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
+                <Linkedin className="h-5 w-5" />
               </a>
               <a
                 href="#"
                 className="h-10 w-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                 aria-label="Twitter"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                </svg>
+                <Twitter className="h-5 w-5" />
               </a>
               <a
                 href="#"
                 className="h-10 w-10 rounded-full bg-white shadow-sm flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
                 aria-label="Email"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
+                <Mail className="h-5 w-5" />
               </a>
             </div>
           </div>
