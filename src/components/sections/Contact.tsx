@@ -4,10 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
+import { useUserInteractions } from '@/hooks/useUserInteractions';
 import { Mail, Phone, Linkedin, Twitter } from 'lucide-react';
 
 const Contact = () => {
   const { toast } = useToast();
+  const { logInteraction, loading: interactionLoading } = useUserInteractions();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,27 +27,52 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    // Log the consultation request interaction
+    const success = await logInteraction({
+      interaction_type: 'consultation_request',
+      user_email: formData.email,
+      user_name: formData.name,
+      user_company: formData.company,
+      user_message: formData.message,
+    });
+
+    if (success) {
+      // Simulate form submission
+      setTimeout(() => {
+        setLoading(false);
+        toast({
+          title: "Message Sent!",
+          description: "We'll get back to you as soon as possible.",
+          duration: 5000,
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          message: '',
+        });
+      }, 1500);
+    } else {
       setLoading(false);
-      toast({
-        title: "Message Sent!",
-        description: "We'll get back to you as soon as possible.",
-        duration: 5000,
-      });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        message: '',
-      });
-    }, 1500);
+    }
+  };
+
+  const handleScheduleDemo = async () => {
+    await logInteraction({
+      interaction_type: 'consultation_request',
+    });
+    
+    toast({
+      title: "Demo Request Logged",
+      description: "We'll contact you soon to schedule your demo.",
+      duration: 5000,
+    });
   };
 
   return (
@@ -121,7 +148,13 @@ const Contact = () => {
               <p className="text-muted-foreground mb-4">
                 See how Vision AI can transform your business with a personalized demonstration of our platform.
               </p>
-              <Button className="btn-gradient">Schedule a Demo</Button>
+              <Button 
+                onClick={handleScheduleDemo}
+                disabled={interactionLoading}
+                className="btn-gradient"
+              >
+                {interactionLoading ? "Logging..." : "Schedule a Demo"}
+              </Button>
             </div>
           </div>
           
@@ -195,7 +228,7 @@ const Contact = () => {
               <Button
                 type="submit"
                 className="w-full btn-gradient"
-                disabled={loading}
+                disabled={loading || interactionLoading}
               >
                 {loading ? "Sending..." : "Send Message"}
               </Button>

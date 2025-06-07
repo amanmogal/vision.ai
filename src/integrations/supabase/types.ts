@@ -9,6 +9,30 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string | null
+          display_name: string | null
+          id: number
+          user_id: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string | null
+          display_name?: string | null
+          id?: never
+          user_id?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string | null
+          display_name?: string | null
+          id?: never
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       user: {
         Row: {
           attrs: Json | null
@@ -27,6 +51,45 @@ export type Database = {
           created_at?: string | null
           email?: string | null
           uid?: string | null
+        }
+        Relationships: []
+      }
+      user_interactions: {
+        Row: {
+          created_at: string
+          id: string
+          interaction_type: string
+          ip_address: unknown | null
+          page_url: string | null
+          user_agent: string | null
+          user_company: string | null
+          user_email: string | null
+          user_message: string | null
+          user_name: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          interaction_type: string
+          ip_address?: unknown | null
+          page_url?: string | null
+          user_agent?: string | null
+          user_company?: string | null
+          user_email?: string | null
+          user_message?: string | null
+          user_name?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          interaction_type?: string
+          ip_address?: unknown | null
+          page_url?: string | null
+          user_agent?: string | null
+          user_company?: string | null
+          user_email?: string | null
+          user_message?: string | null
+          user_name?: string | null
         }
         Relationships: []
       }

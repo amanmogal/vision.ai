@@ -1,12 +1,29 @@
 
 import { ArrowRight } from 'lucide-react';
+import { useUserInteractions } from '@/hooks/useUserInteractions';
 
 const Hero = () => {
-  const scrollToContact = () => {
+  const { logInteraction, loading } = useUserInteractions();
+
+  const scrollToContact = async () => {
+    // Log the consultation request interaction
+    await logInteraction({
+      interaction_type: 'consultation_request',
+    });
+
     const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const scrollToServices = async () => {
+    // Log the service exploration interaction
+    await logInteraction({
+      interaction_type: 'service_exploration',
+    });
+
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -38,17 +55,19 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <button 
               onClick={scrollToContact}
-              className="btn-gradient px-8 py-3 rounded-lg text-lg font-medium flex items-center justify-center"
+              disabled={loading}
+              className="btn-gradient px-8 py-3 rounded-lg text-lg font-medium flex items-center justify-center disabled:opacity-50"
             >
-              Request a Free Consultation
+              {loading ? "Processing..." : "Request a Free Consultation"}
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
             
             <button
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white hover:bg-muted border border-border px-8 py-3 rounded-lg text-lg font-medium transition-colors"
+              onClick={scrollToServices}
+              disabled={loading}
+              className="bg-white hover:bg-muted border border-border px-8 py-3 rounded-lg text-lg font-medium transition-colors disabled:opacity-50"
             >
-              Explore Our Services
+              {loading ? "Processing..." : "Explore Our Services"}
             </button>
           </div>
         </div>
