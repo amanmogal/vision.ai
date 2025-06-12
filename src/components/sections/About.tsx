@@ -1,4 +1,3 @@
-
 import { Lightbulb, Users, Globe } from 'lucide-react';
 
 const About = () => {
@@ -7,7 +6,6 @@ const About = () => {
       <div className="section-container">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="pulse-chip mb-6 mx-auto">
-            <span className="font-semibold">04</span>
             <span className="ml-2">About Vision AI</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">About Vision AI</h2>
@@ -56,7 +54,6 @@ const About = () => {
         
         <div className="glass-card p-8 md:p-12 text-center bg-gradient-to-r from-pulse-50 to-pulse-100">
           <div className="pulse-chip mb-6 mx-auto">
-            <span className="font-semibold">05</span>
             <span className="ml-2">India-First Approach</span>
           </div>
           <h3 className="text-2xl md:text-3xl font-semibold mb-6 gradient-text font-playfair">Our India-First Approach</h3>

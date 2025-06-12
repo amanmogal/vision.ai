@@ -39,7 +39,6 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
           {/* Pulse chip indicator */}
           <div className="pulse-chip mb-6 animate-fade-in">
-            <span className="font-semibold">01</span>
             <span className="ml-2">AI Innovation for SMBs</span>
           </div>
           
@@ -85,7 +84,7 @@ const Hero = () => {
               <div className="bg-white rounded-xl p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="feature-card bg-gradient-to-br from-pulse-50 to-pulse-100 hover-lift">
                   <div className="flex items-start space-x-4">
-                    <div className="pulse-chip">02</div>
+                    <div className="pulse-chip">Agentic Workflows</div>
                     <div>
                       <h3 className="text-xl font-semibold mb-3 gradient-text">Agentic Workflows</h3>
                       <p className="text-muted-foreground">
@@ -96,7 +95,7 @@ const Hero = () => {
                 </div>
                 <div className="feature-card bg-gradient-to-br from-pulse-50 to-pulse-100 hover-lift">
                   <div className="flex items-start space-x-4">
-                    <div className="pulse-chip">03</div>
+                    <div className="pulse-chip">Indian Data Annotation</div>
                     <div>
                       <h3 className="text-xl font-semibold mb-3 gradient-text">Indian Data Annotation</h3>
                       <p className="text-muted-foreground">

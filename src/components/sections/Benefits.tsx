@@ -1,4 +1,3 @@
-
 import { CheckCircle, TrendingUp, DollarSign, Users, Target, ShieldCheck, Heart } from 'lucide-react';
 
 const Benefits = () => {
@@ -40,7 +39,6 @@ const Benefits = () => {
       <div className="section-container">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="pulse-chip mb-6 mx-auto">
-            <span className="font-semibold">06</span>
             <span className="ml-2">Business Benefits</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Benefits for Your Business</h2>
@@ -71,7 +69,6 @@ const Benefits = () => {
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-2/3 mb-8 md:mb-0 md:mr-8">
               <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white/20 text-white border border-white/30 mb-6">
-                <span className="font-semibold">07</span>
                 <span className="ml-2">Core Focus</span>
               </div>
               <h3 className="text-2xl md:text-3xl font-semibold mb-6 font-playfair">Focus on What Matters Most</h3>
