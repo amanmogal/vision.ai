@@ -35,7 +35,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+        isScrolled 
+          ? 'bg-white/90 backdrop-blur-md shadow-elegant py-2' 
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="container-custom flex items-center justify-between">
@@ -44,7 +46,7 @@ const Navbar = () => {
             <img
               src="/lovable-uploads/68ac6025-a214-45c9-a801-b4d0dfc3ce81.png"
               alt="Vision AI Logo"
-              className="h-12 md:h-14" /* Increased size from h-10 */
+              className="h-12 md:h-14 hover:scale-105 transition-transform duration-300"
             />
           </a>
         </div>
@@ -53,31 +55,31 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-8">
           <button
             onClick={() => scrollToSection('about')}
-            className="text-foreground hover:text-primary transition-colors"
+            className="nav-link"
           >
             About
           </button>
           <button
             onClick={() => scrollToSection('services')}
-            className="text-foreground hover:text-primary transition-colors"
+            className="nav-link"
           >
             Services
           </button>
           <button
             onClick={() => scrollToSection('benefits')}
-            className="text-foreground hover:text-primary transition-colors"
+            className="nav-link"
           >
             Benefits
           </button>
           <button
             onClick={() => scrollToSection('use-cases')}
-            className="text-foreground hover:text-primary transition-colors"
+            className="nav-link"
           >
             Use Cases
           </button>
           <button
             onClick={() => scrollToSection('contact')}
-            className="btn-gradient px-6 py-2 rounded-lg"
+            className="button-primary"
           >
             Contact Us
           </button>
@@ -90,6 +92,7 @@ const Navbar = () => {
             size="icon"
             onClick={toggleMobileMenu}
             aria-label="Toggle Menu"
+            className="hover:bg-pulse-100"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
@@ -98,35 +101,35 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
-          <div className="flex flex-col space-y-4 py-4 px-4">
+        <div className="md:hidden glass-card mt-2 mx-4 rounded-2xl">
+          <div className="flex flex-col space-y-2 py-4 px-4">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-left py-2 px-4 hover:bg-muted rounded-md transition-colors"
+              className="text-left py-3 px-4 hover:bg-pulse-50 rounded-xl transition-colors nav-link"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-left py-2 px-4 hover:bg-muted rounded-md transition-colors"
+              className="text-left py-3 px-4 hover:bg-pulse-50 rounded-xl transition-colors nav-link"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('benefits')}
-              className="text-left py-2 px-4 hover:bg-muted rounded-md transition-colors"
+              className="text-left py-3 px-4 hover:bg-pulse-50 rounded-xl transition-colors nav-link"
             >
               Benefits
             </button>
             <button
               onClick={() => scrollToSection('use-cases')}
-              className="text-left py-2 px-4 hover:bg-muted rounded-md transition-colors"
+              className="text-left py-3 px-4 hover:bg-pulse-50 rounded-xl transition-colors nav-link"
             >
               Use Cases
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="btn-gradient py-2 px-4 rounded-md"
+              className="button-primary mt-2"
             >
               Contact Us
             </button>
