@@ -43,20 +43,24 @@ const Navbar = () => {
       <div className="container-custom flex items-center justify-between">
         <div className="flex items-center">
           <a href="#hero" className="flex items-center">
-            <img
-              src="/lovable-uploads/68ac6025-a214-45c9-a801-b4d0dfc3ce81.png"
-              alt="Vision AI Logo"
-              className={`transition-all duration-300 hover:scale-105 ${
-                isScrolled 
-                  ? 'h-16 md:h-18 brightness-100 contrast-125' 
-                  : 'h-20 md:h-24 brightness-110 contrast-110 drop-shadow-sm'
-              }`}
-              style={{
-                filter: isScrolled 
-                  ? 'brightness(1.1) contrast(1.2) saturate(1.1)' 
-                  : 'brightness(1.15) contrast(1.15) saturate(1.15) drop-shadow(0 2px 4px rgba(255,255,255,0.3))'
-              }}
-            />
+            <div className={`rounded-xl transition-all duration-300 hover:scale-105 ${
+              isScrolled 
+                ? 'bg-white p-2 shadow-md' 
+                : 'bg-white/95 p-3 shadow-lg backdrop-blur-sm'
+            }`}>
+              <img
+                src="/lovable-uploads/68ac6025-a214-45c9-a801-b4d0dfc3ce81.png"
+                alt="Vision AI Logo"
+                className={`transition-all duration-300 ${
+                  isScrolled 
+                    ? 'h-12 md:h-14' 
+                    : 'h-16 md:h-20'
+                }`}
+                style={{
+                  filter: 'brightness(1) contrast(1.1) saturate(1.1)'
+                }}
+              />
+            </div>
           </a>
         </div>
 
