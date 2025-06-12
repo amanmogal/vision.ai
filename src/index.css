@@ -106,10 +106,10 @@
   }
 }
 
-/* Pulse Design System Components */
+/* Enhanced Pulse Design System Components */
 @layer components {
   .pulse-chip {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pulse-100 text-pulse-600 border border-pulse-200;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pulse-100 text-pulse-600 border border-pulse-200 transition-all duration-300 hover:shadow-md;
   }
 
   .glass-card {
@@ -121,11 +121,11 @@
   }
 
   .button-primary {
-    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98];
+    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .button-secondary {
-    @apply bg-transparent border border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300;
+    @apply bg-transparent border border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300 hover:shadow-md transform hover:scale-[1.02] active:scale-[0.98];
   }
 
   .nav-link {
@@ -138,6 +138,24 @@
 
   .hover-lift {
     @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  /* Enhanced interactive elements */
+  .interactive-card {
+    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer;
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, 
+      rgba(255, 255, 255, 0) 0%, 
+      rgba(255, 255, 255, 0.4) 50%, 
+      rgba(255, 255, 255, 0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
   }
 }
 
@@ -153,7 +171,7 @@
   line-height: 20px;
   padding: 16px 24px;
   border: 1px solid white;
-  @apply transition-all duration-300 hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98];
+  @apply transition-all duration-300 hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
 .section-padding {
@@ -162,6 +180,34 @@
 
 .container-custom {
   @apply container mx-auto px-4 md:px-8;
+}
+
+/* Enhanced animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.6);
+  }
 }
 
 /* Mobile optimizations */
@@ -178,4 +224,38 @@
     width: 100%;
     text-align: center;
   }
+}
+
+/* Interactive enhancements */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.hover-glow {
+  @apply transition-all duration-300;
+}
+
+.hover-glow:hover {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Loading states */
+.skeleton {
+  @apply animate-pulse bg-pulse-100 rounded;
+}
+
+.loading-dots {
+  @apply inline-flex space-x-1;
+}
+
+.loading-dots > div {
+  @apply w-2 h-2 bg-pulse-500 rounded-full animate-bounce;
+}
+
+.loading-dots > div:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.loading-dots > div:nth-child(3) {
+  animation-delay: 0.2s;
 }
