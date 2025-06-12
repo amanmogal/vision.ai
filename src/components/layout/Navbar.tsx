@@ -46,7 +46,16 @@ const Navbar = () => {
             <img
               src="/lovable-uploads/68ac6025-a214-45c9-a801-b4d0dfc3ce81.png"
               alt="Vision AI Logo"
-              className="h-12 md:h-14 hover:scale-105 transition-transform duration-300"
+              className={`transition-all duration-300 hover:scale-105 ${
+                isScrolled 
+                  ? 'h-16 md:h-18 brightness-100 contrast-125' 
+                  : 'h-20 md:h-24 brightness-110 contrast-110 drop-shadow-sm'
+              }`}
+              style={{
+                filter: isScrolled 
+                  ? 'brightness(1.1) contrast(1.2) saturate(1.1)' 
+                  : 'brightness(1.15) contrast(1.15) saturate(1.15) drop-shadow(0 2px 4px rgba(255,255,255,0.3))'
+              }}
             />
           </a>
         </div>
