@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -14,12 +13,7 @@ const FAQ = () => {
 
   const faqData: FAQItem[] = [
     {
-      question: "What is Computer Vision and how can it benefit my business?",
-      answer: "Computer Vision is an AI technology that enables machines to interpret and understand visual information from images and videos. It can automate quality control, enhance security, improve customer experiences, and streamline operations by automating visual inspection tasks that traditionally required human oversight.",
-      category: "general"
-    },
-    {
-      question: "How long does it typically take to implement a Vision AI solution?",
+      question: "How long does it typically take to implement an AI agentic workflow solution?",
       answer: "Implementation timelines vary based on project complexity. Simple solutions can be deployed in 2-4 weeks, while complex custom systems may take 3-6 months. We provide detailed timeline estimates during our initial consultation based on your specific requirements.",
       category: "implementation"
     },
@@ -30,17 +24,17 @@ const FAQ = () => {
     },
     {
       question: "Do you provide ongoing support after implementation?",
-      answer: "Yes, we offer comprehensive support packages including system monitoring, regular updates, performance optimization, and technical support. Our team ensures your Vision AI solution continues to perform optimally as your business grows.",
+      answer: "Yes, we offer comprehensive support packages including system monitoring, regular updates, performance optimization, and technical support. Our team ensures your AI agentic workflow solution continues to perform optimally as your business grows.",
       category: "support"
     },
     {
-      question: "How accurate are your Vision AI solutions?",
+      question: "How accurate are your AI agentic workflow solutions?",
       answer: "Our solutions typically achieve 95-99% accuracy rates, depending on the specific use case and data quality. We use advanced machine learning algorithms and continuous learning to improve accuracy over time.",
       category: "technical"
     },
     {
       question: "Can your solutions integrate with our existing systems?",
-      answer: "Absolutely. Our Vision AI solutions are designed to integrate seamlessly with existing enterprise systems, databases, and workflows. We support various APIs, cloud platforms, and on-premise deployments.",
+      answer: "Absolutely. Our AI agentic workflow solutions are designed to integrate seamlessly with existing enterprise systems, databases, and workflows. We support various APIs, cloud platforms, and on-premise deployments.",
       category: "technical"
     },
     {
@@ -96,7 +90,7 @@ const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground">
-            Get answers to common questions about our Vision AI solutions and services.
+            Get answers to common questions about our AI agentic workflow solutions and services.
           </p>
         </div>
 
