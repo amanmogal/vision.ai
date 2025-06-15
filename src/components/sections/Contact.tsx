@@ -5,12 +5,14 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import { useUserInteractions } from '@/hooks/useUserInteractions';
-import { Mail, Phone, Linkedin, Twitter, Tabs, TabsList, TabsTrigger, TabsContent } from 'lucide-react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Mail, Phone, Linkedin, Twitter } from 'lucide-react';
 import MultiStepContactForm from '@/components/forms/MultiStepContactForm';
 
 const Contact = () => {
   const { toast } = useToast();
   const { logInteraction, loading: interactionLoading } = useUserInteractions();
+  const [activeTab, setActiveTab] = useState<'quick' | 'detailed'>('quick');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -161,33 +163,13 @@ const Contact = () => {
           <div className="lg:col-span-3">
             <div className="bg-muted/30 rounded-2xl p-1">
               <div className="bg-white rounded-xl">
-                {/* Tab Navigation */}
-                <div className="flex border-b border-gray-200">
-                  <button
-                    onClick={() => setActiveTab('quick')}
-                    className={`flex-1 py-4 px-6 text-center font-medium transition-colors ${
-                      activeTab === 'quick'
-                        ? 'text-pulse-600 border-b-2 border-pulse-500 bg-white'
-                        : 'text-gray-500 hover:text-gray-700'
-                    }`}
-                  >
-                    Quick Contact
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('detailed')}
-                    className={`flex-1 py-4 px-6 text-center font-medium transition-colors ${
-                      activeTab === 'detailed'
-                        ? 'text-pulse-600 border-b-2 border-pulse-500 bg-white'
-                        : 'text-gray-500 hover:text-gray-700'
-                    }`}
-                  >
-                    Detailed Request
-                  </button>
-                </div>
-
-                {/* Tab Content */}
-                <div className="p-6">
-                  {activeTab === 'quick' ? (
+                <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'quick' | 'detailed')}>
+                  <TabsList className="grid w-full grid-cols-2">
+                    <TabsTrigger value="quick">Quick Contact</TabsTrigger>
+                    <TabsTrigger value="detailed">Detailed Request</TabsTrigger>
+                  </TabsList>
+                  
+                  <TabsContent value="quick" className="p-6">
                     <div>
                       <h3 className="text-xl font-semibold mb-4">Send Us a Quick Message</h3>
                       <form onSubmit={handleQuickSubmit} className="space-y-4">
@@ -264,7 +246,9 @@ const Contact = () => {
                         </Button>
                       </form>
                     </div>
-                  ) : (
+                  </TabsContent>
+                  
+                  <TabsContent value="detailed" className="p-6">
                     <div>
                       <h3 className="text-xl font-semibold mb-4">Detailed Project Request</h3>
                       <p className="text-muted-foreground mb-6">
@@ -272,8 +256,8 @@ const Contact = () => {
                       </p>
                       <MultiStepContactForm />
                     </div>
-                  )}
-                </div>
+                  </TabsContent>
+                </Tabs>
               </div>
             </div>
           </div>
@@ -288,8 +272,5 @@ const Contact = () => {
     </section>
   );
 };
-
-// Add state for tab switching
-const [activeTab, setActiveTab] = useState<'quick' | 'detailed'>('quick');
 
 export default Contact;
