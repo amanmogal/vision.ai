@@ -5,7 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import { useUserInteractions } from '@/hooks/useUserInteractions';
-import { Mail, Phone, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, Linkedin, Twitter, Tabs, TabsList, TabsTrigger, TabsContent } from 'lucide-react';
+import MultiStepContactForm from '@/components/forms/MultiStepContactForm';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -27,11 +28,10 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleQuickSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     
-    // Log the consultation request interaction
     const success = await logInteraction({
       interaction_type: 'consultation_request',
       user_email: formData.email,
@@ -41,7 +41,6 @@ const Contact = () => {
     });
 
     if (success) {
-      // Simulate form submission
       setTimeout(() => {
         setLoading(false);
         toast({
@@ -50,7 +49,6 @@ const Contact = () => {
           duration: 5000,
         });
         
-        // Reset form
         setFormData({
           name: '',
           email: '',
@@ -85,12 +83,13 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Contact Info - Left Column */}
+          <div className="lg:col-span-2">
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
             
             <div className="space-y-6">
-              <div className="flex items-start">
+              <div className="flex items-start hover-lift">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
@@ -103,7 +102,7 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-start hover-lift">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
@@ -116,7 +115,7 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-start hover-lift">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
                   <Linkedin className="h-6 w-6 text-primary" />
                 </div>
@@ -129,7 +128,7 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-start hover-lift">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
                   <Twitter className="h-6 w-6 text-primary" />
                 </div>
@@ -143,7 +142,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="mt-10 p-6 bg-muted rounded-lg">
+            <div className="mt-10 p-6 bg-muted rounded-lg hover-lift">
               <h4 className="font-semibold mb-3">Request a Free Demo</h4>
               <p className="text-muted-foreground mb-4">
                 See how Vision AI can transform your business with a personalized demonstration of our platform.
@@ -151,97 +150,146 @@ const Contact = () => {
               <Button 
                 onClick={handleScheduleDemo}
                 disabled={interactionLoading}
-                className="btn-gradient"
+                className="btn-gradient hover-scale"
               >
                 {interactionLoading ? "Logging..." : "Schedule a Demo"}
               </Button>
             </div>
           </div>
-          
-          <div>
-            <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">
-                    Your Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Full Name"
-                    className="w-full"
-                  />
+
+          {/* Contact Forms - Right Column */}
+          <div className="lg:col-span-3">
+            <div className="bg-muted/30 rounded-2xl p-1">
+              <div className="bg-white rounded-xl">
+                {/* Tab Navigation */}
+                <div className="flex border-b border-gray-200">
+                  <button
+                    onClick={() => setActiveTab('quick')}
+                    className={`flex-1 py-4 px-6 text-center font-medium transition-colors ${
+                      activeTab === 'quick'
+                        ? 'text-pulse-600 border-b-2 border-pulse-500 bg-white'
+                        : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  >
+                    Quick Contact
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('detailed')}
+                    className={`flex-1 py-4 px-6 text-center font-medium transition-colors ${
+                      activeTab === 'detailed'
+                        ? 'text-pulse-600 border-b-2 border-pulse-500 bg-white'
+                        : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  >
+                    Detailed Request
+                  </button>
                 </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">
-                    Email Address
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="you@company.com"
-                    className="w-full"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-1">
-                    Company Name
-                  </label>
-                  <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    required
-                    placeholder="Your Company"
-                    className="w-full"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    placeholder="How can we help you?"
-                    className="w-full"
-                    rows={4}
-                  />
+
+                {/* Tab Content */}
+                <div className="p-6">
+                  {activeTab === 'quick' ? (
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4">Send Us a Quick Message</h3>
+                      <form onSubmit={handleQuickSubmit} className="space-y-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div>
+                            <label htmlFor="name" className="block text-sm font-medium mb-1">
+                              Your Name
+                            </label>
+                            <Input
+                              id="name"
+                              name="name"
+                              value={formData.name}
+                              onChange={handleChange}
+                              required
+                              placeholder="Full Name"
+                              className="hover:border-pulse-300 focus:border-pulse-500 transition-colors"
+                            />
+                          </div>
+                          
+                          <div>
+                            <label htmlFor="email" className="block text-sm font-medium mb-1">
+                              Email Address
+                            </label>
+                            <Input
+                              id="email"
+                              name="email"
+                              type="email"
+                              value={formData.email}
+                              onChange={handleChange}
+                              required
+                              placeholder="you@company.com"
+                              className="hover:border-pulse-300 focus:border-pulse-500 transition-colors"
+                            />
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="company" className="block text-sm font-medium mb-1">
+                            Company Name
+                          </label>
+                          <Input
+                            id="company"
+                            name="company"
+                            value={formData.company}
+                            onChange={handleChange}
+                            required
+                            placeholder="Your Company"
+                            className="hover:border-pulse-300 focus:border-pulse-500 transition-colors"
+                          />
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="message" className="block text-sm font-medium mb-1">
+                            Message
+                          </label>
+                          <Textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                            placeholder="How can we help you?"
+                            rows={4}
+                            className="hover:border-pulse-300 focus:border-pulse-500 transition-colors"
+                          />
+                        </div>
+                        
+                        <Button
+                          type="submit"
+                          className="w-full btn-gradient hover-scale"
+                          disabled={loading || interactionLoading}
+                        >
+                          {loading ? "Sending..." : "Send Message"}
+                        </Button>
+                      </form>
+                    </div>
+                  ) : (
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4">Detailed Project Request</h3>
+                      <p className="text-muted-foreground mb-6">
+                        Get a comprehensive consultation by providing detailed information about your project.
+                      </p>
+                      <MultiStepContactForm />
+                    </div>
+                  )}
                 </div>
               </div>
-              
-              <Button
-                type="submit"
-                className="w-full btn-gradient"
-                disabled={loading || interactionLoading}
-              >
-                {loading ? "Sending..." : "Send Message"}
-              </Button>
-              
-              <p className="text-sm text-muted-foreground text-center mt-4">
-                By submitting this form, you agree to our Privacy Policy and Terms of Service.
-              </p>
-            </form>
+            </div>
           </div>
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-sm text-muted-foreground">
+            By contacting us, you agree to our Privacy Policy and Terms of Service.
+          </p>
         </div>
       </div>
     </section>
   );
 };
+
+// Add state for tab switching
+const [activeTab, setActiveTab] = useState<'quick' | 'detailed'>('quick');
 
 export default Contact;

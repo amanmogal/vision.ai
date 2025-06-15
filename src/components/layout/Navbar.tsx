@@ -87,6 +87,12 @@ const Navbar = () => {
             Use Cases
           </button>
           <button
+            onClick={() => scrollToSection('faq')}
+            className="nav-link"
+          >
+            FAQ
+          </button>
+          <button
             onClick={() => scrollToSection('contact')}
             className="button-primary"
           >
@@ -135,6 +141,12 @@ const Navbar = () => {
               className="text-left py-3 px-4 hover:bg-pulse-50 rounded-xl transition-colors nav-link"
             >
               Use Cases
+            </button>
+            <button
+              onClick={() => scrollToSection('faq')}
+              className="text-left py-3 px-4 hover:bg-pulse-50 rounded-xl transition-colors nav-link"
+            >
+              FAQ
             </button>
             <button
               onClick={() => scrollToSection('contact')}
