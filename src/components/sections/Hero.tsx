@@ -1,4 +1,3 @@
-
 import { ArrowRight, Play, CheckCircle } from 'lucide-react';
 import { useUserInteractions } from '@/hooks/useUserInteractions';
 
@@ -46,7 +45,7 @@ const Hero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-right">
             Empowering Indian SMBs with{' '}
             <span className="gradient-text font-playfair italic hover:scale-105 transition-transform duration-300 inline-block">AI Automation</span> and{' '}
-            <span className="gradient-text font-playfair italic hover:scale-105 transition-transform duration-300 inline-block">Data Excellence</span>
+            <span className="gradient-text font-playfair italic hover:scale-105 transition-transform duration-300 inline-block">Intelligent Assistance</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-muted-foreground animate-fade-in-left">
