@@ -1,3 +1,4 @@
+
 import { 
   Settings, 
   File, 
@@ -5,7 +6,11 @@ import {
   Lock,
   LineChart,
   MonitorSmartphone,
-  MessageSquare
+  MessageSquare,
+  Brain,
+  Search,
+  Calendar,
+  FileText
 } from 'lucide-react';
 
 const Services = () => {
@@ -15,8 +20,8 @@ const Services = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Services</h2>
           <p className="text-lg text-muted-foreground">
-            Vision AI offers two complementary services that work together to deliver 
-            comprehensive AI solutions for Indian SMBs.
+            Vision AI offers two comprehensive services that work together to deliver 
+            intelligent AI solutions for Indian SMBs and individuals.
           </p>
         </div>
 
@@ -93,31 +98,78 @@ const Services = () => {
             </div>
           </div>
 
-          {/* Data Annotation */}
+          {/* AI Personal Assistant */}
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-border hover:border-primary/40 transition-colors">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">Upcoming: Indian Data Annotation</h3>
+            <h3 className="text-2xl font-bold mb-4 gradient-text">AI Personal Assistant for Everyone</h3>
             <p className="text-muted-foreground mb-8">
-              We are developing specialized data annotation services tailored for Indian languages and contexts. 
-              These services will provide the high-quality data needed to build and fine-tune AI models relevant to India.
+              Your intelligent companion that gathers information, manages tasks, and provides professional 
+              assistance tailored to your needs. From research to scheduling, our AI assistant enhances 
+              productivity for individuals and businesses alike.
             </p>
             
-            <div className="flex items-center justify-center p-4 bg-muted rounded-lg mb-8">
-              <p className="text-sm font-medium text-muted-foreground italic">
-                More details will be available as the launch approaches.
-              </p>
-            </div>
-            
-            <h4 className="font-semibold mb-4">Purpose:</h4>
+            <h4 className="font-semibold mb-4">Core Capabilities:</h4>
             <div className="grid grid-cols-1 gap-6 mb-8">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mr-3">
+                  <Search className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h5 className="font-medium">Intelligent Information Gathering</h5>
+                  <p className="text-sm text-muted-foreground">
+                    Automatically research topics, compile market data, and gather relevant information 
+                    from multiple sources with accurate citations and summaries.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mr-3">
+                  <Brain className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h5 className="font-medium">Smart Analysis & Insights</h5>
+                  <p className="text-sm text-muted-foreground">
+                    Process complex data, identify trends, and provide actionable insights 
+                    to support better decision-making for your business or personal projects.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mr-3">
+                  <FileText className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h5 className="font-medium">Professional Documentation</h5>
+                  <p className="text-sm text-muted-foreground">
+                    Create professional reports, presentations, and documents with proper 
+                    formatting, citations, and industry-standard templates.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="flex-shrink-0 mr-3">
+                  <Calendar className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h5 className="font-medium">Task Management & Scheduling</h5>
+                  <p className="text-sm text-muted-foreground">
+                    Organize your schedule, set reminders, manage projects, and coordinate 
+                    meetings with intelligent calendar integration and priority management.
+                  </p>
+                </div>
+              </div>
+              
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-3">
                   <MessageSquare className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h5 className="font-medium">Indian Language Support</h5>
+                  <h5 className="font-medium">Multi-language Communication</h5>
                   <p className="text-sm text-muted-foreground">
-                    Enable AI models to understand and process data in various Indian languages 
-                    including Hindi, Tamil, Bengali, Marathi, Telugu, and more.
+                    Communicate effectively in Hindi, English, and other Indian languages 
+                    with context-aware responses and cultural sensitivity.
                   </p>
                 </div>
               </div>
@@ -125,51 +177,36 @@ const Services = () => {
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-3">
                   <div className="h-5 w-5 flex items-center justify-center text-primary">
-                    🖼️
+                    🎯
                   </div>
                 </div>
                 <div>
-                  <h5 className="font-medium">Cultural Context Understanding</h5>
+                  <h5 className="font-medium">Personalized Assistance</h5>
                   <p className="text-sm text-muted-foreground">
-                    Enhance AI models' ability to recognize and appropriately interpret Indian cultural 
-                    contexts, symbols, and environments in visual and textual data.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <div className="flex-shrink-0 mr-3">
-                  <div className="h-5 w-5 flex items-center justify-center text-primary">
-                    🎬
-                  </div>
-                </div>
-                <div>
-                  <h5 className="font-medium">AI Model Enhancement</h5>
-                  <p className="text-sm text-muted-foreground">
-                    Provide the foundation for building more accurate and relevant AI models 
-                    specifically designed for Indian businesses and consumers.
+                    Learn your preferences, working style, and requirements to provide 
+                    increasingly personalized and efficient assistance over time.
                   </p>
                 </div>
               </div>
             </div>
             
-            <h4 className="font-semibold mb-4">Our Commitment:</h4>
+            <h4 className="font-semibold mb-4">Perfect For:</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-center">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
-                <span>Deep understanding of Indian cultural context</span>
+                <span>Entrepreneurs and business owners</span>
               </li>
               <li className="flex items-center">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
-                <span>Industry-leading quality and accuracy</span>
+                <span>Students and researchers</span>
               </li>
               <li className="flex items-center">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
-                <span>Cost-effective solutions scaled to your needs</span>
+                <span>Professionals and consultants</span>
               </li>
               <li className="flex items-center">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
-                <span>Complementary to our Agentic Workflow solutions</span>
+                <span>Anyone seeking intelligent productivity enhancement</span>
               </li>
             </ul>
           </div>
