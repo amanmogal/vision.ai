@@ -15,7 +15,7 @@ const About = () => {
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in hover:scale-105 transition-transform duration-300 cursor-default">About Vision AI</h2>
           <p className="text-lg text-muted-foreground animate-fade-in-right">
-            We're pioneering AI solutions tailored specifically for Indian SMBs, combining advanced automation with deep local expertise.
+            We're pioneering AI solutions tailored specifically for Indian SMBs, combining advanced automation with intelligent personal assistance.
           </p>
         </div>
 
@@ -27,7 +27,7 @@ const About = () => {
             </div>
             <h3 className="text-xl font-semibold mb-4 gradient-text group-hover:scale-105 transition-transform duration-300">Our Mission</h3>
             <p className="text-muted-foreground leading-relaxed group-hover:text-gray-600 transition-colors duration-300">
-              To be the foremost provider of scalable agentic workflows and high-quality Indian data annotation, 
+              To be the foremost provider of scalable agentic workflows and intelligent AI personal assistants, 
               empowering SMBs for efficiency, productivity, and growth.
             </p>
           </div>

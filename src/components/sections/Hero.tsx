@@ -50,7 +50,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 text-muted-foreground animate-fade-in-left">
-            Scalable Agentic Workflows and High-Quality Indian Data Annotation
+            Scalable Agentic Workflows and Intelligent AI Personal Assistant
           </p>
           
           <p className="text-lg mb-10 max-w-3xl text-gray-600 animate-fade-in">
@@ -114,11 +114,11 @@ const Hero = () => {
                 </div>
                 <div className="feature-card bg-gradient-to-br from-pulse-50 to-pulse-100 hover-lift group">
                   <div className="flex items-start space-x-4">
-                    <div className="pulse-chip group-hover:scale-110 transition-transform duration-300">Indian Data Annotation</div>
+                    <div className="pulse-chip group-hover:scale-110 transition-transform duration-300">AI Personal Assistant</div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-3 gradient-text group-hover:scale-105 transition-transform duration-300">Indian Data Annotation</h3>
+                      <h3 className="text-xl font-semibold mb-3 gradient-text group-hover:scale-105 transition-transform duration-300">AI Personal Assistant</h3>
                       <p className="text-muted-foreground">
-                        High-quality, culturally-accurate data labeling services specialized for the Indian context and linguistic diversity.
+                        Intelligent companion for information gathering, task management, and professional assistance tailored to Indian businesses and individuals.
                       </p>
                     </div>
                   </div>

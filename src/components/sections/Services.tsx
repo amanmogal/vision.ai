@@ -22,8 +22,8 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Services</h2>
           <p className="text-lg text-muted-foreground">
             Vision AI offers comprehensive AI solutions designed specifically for Indian SMBs. 
-            Our current service is live and ready to transform your business, while our upcoming 
-            AI assistant will further enhance productivity and automation.
+            Our live Agentic Workflows service is already transforming businesses, while our upcoming 
+            AI Personal Assistant will revolutionize how you work and manage tasks.
           </p>
         </div>
 
