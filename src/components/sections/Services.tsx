@@ -10,7 +10,8 @@ import {
   Brain,
   Search,
   Calendar,
-  FileText
+  FileText,
+  Clock
 } from 'lucide-react';
 
 const Services = () => {
@@ -20,8 +21,9 @@ const Services = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Services</h2>
           <p className="text-lg text-muted-foreground">
-            Vision AI offers two comprehensive services that work together to deliver 
-            intelligent AI solutions for Indian SMBs and individuals.
+            Vision AI offers comprehensive AI solutions designed specifically for Indian SMBs. 
+            Our current service is live and ready to transform your business, while our upcoming 
+            AI assistant will further enhance productivity and automation.
           </p>
         </div>
 
@@ -98,16 +100,22 @@ const Services = () => {
             </div>
           </div>
 
-          {/* AI Personal Assistant */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-border hover:border-primary/40 transition-colors">
+          {/* AI Personal Assistant - Upcoming */}
+          <div className="bg-white rounded-2xl p-8 shadow-lg border border-border hover:border-primary/40 transition-colors relative">
+            {/* Upcoming Badge */}
+            <div className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-400 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg flex items-center gap-2">
+              <Clock className="h-4 w-4" />
+              Coming Soon
+            </div>
+            
             <h3 className="text-2xl font-bold mb-4 gradient-text">AI Personal Assistant for Everyone</h3>
             <p className="text-muted-foreground mb-8">
-              Your intelligent companion that gathers information, manages tasks, and provides professional 
-              assistance tailored to your needs. From research to scheduling, our AI assistant enhances 
+              Your intelligent companion that will gather information, manage tasks, and provide professional 
+              assistance tailored to your needs. From research to scheduling, our upcoming AI assistant will enhance 
               productivity for individuals and businesses alike.
             </p>
             
-            <h4 className="font-semibold mb-4">Core Capabilities:</h4>
+            <h4 className="font-semibold mb-4">Upcoming Core Capabilities:</h4>
             <div className="grid grid-cols-1 gap-6 mb-8">
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-3">
@@ -155,7 +163,7 @@ const Services = () => {
                 <div>
                   <h5 className="font-medium">Task Management & Scheduling</h5>
                   <p className="text-sm text-muted-foreground">
-                    Organize your schedule, set reminders, manage projects, and coordinate 
+                    Organize schedules, set reminders, manage projects, and coordinate 
                     meetings with intelligent calendar integration and priority management.
                   </p>
                 </div>
@@ -191,7 +199,7 @@ const Services = () => {
             </div>
             
             <h4 className="font-semibold mb-4">Perfect For:</h4>
-            <ul className="space-y-2 text-muted-foreground">
+            <ul className="space-y-2 text-muted-foreground mb-6">
               <li className="flex items-center">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
                 <span>Entrepreneurs and business owners</span>
@@ -209,6 +217,15 @@ const Services = () => {
                 <span>Anyone seeking intelligent productivity enhancement</span>
               </li>
             </ul>
+
+            {/* CTA for upcoming service */}
+            <div className="bg-gradient-to-r from-pulse-50 to-pulse-100 rounded-xl p-4 border border-pulse-200">
+              <p className="text-sm text-pulse-700 font-medium mb-2">🚀 Early Access Available</p>
+              <p className="text-sm text-muted-foreground">
+                Be among the first to experience our AI Personal Assistant. Contact us to join our beta program 
+                and get priority access when we launch.
+              </p>
+            </div>
           </div>
         </div>
       </div>
